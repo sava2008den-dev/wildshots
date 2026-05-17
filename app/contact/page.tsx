@@ -54,7 +54,7 @@ export default function ContactPage() {
           {/* CONTACT BUTTONS */}
           <div className="mt-16 flex flex-col md:flex-row gap-6 justify-center">
             <a
-              href="https://wa.me/+40700000000"
+              href="https://wa.me/+40740275555"
               target="_blank"
               className="border border-white/20 px-10 py-5 uppercase tracking-[0.3em] text-sm font-bold hover:bg-white hover:text-black transition"
             >
@@ -69,7 +69,7 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="tel:+40700000000"
+              href="tel:+40740275555"
               className="border border-white/20 px-10 py-5 uppercase tracking-[0.3em] text-sm font-bold hover:bg-white hover:text-black transition"
             >
               Call Now
