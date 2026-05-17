@@ -21,32 +21,34 @@ export default function ToursPage() {
           </p>
 
           <h1 className="text-5xl md:text-8xl font-black leading-[0.9] max-w-5xl">
-            Wildlife & Landscape Tours Across Romania
+            Wildlife & Landscape Tours Across Romania & Beyond
           </h1>
         </div>
       </section>
 
       {/* TOURS */}
-      <section className="py-24 px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-10">
+      <section className="py-24 px-8">
+        <div className="max-w-5xl mx-auto space-y-20">
           {/* TOUR 1 */}
           <div className="border border-white/10 overflow-hidden">
             <img
-              src="/images/bear.jpg"
-              className="h-[500px] w-full object-cover"
+              src="/images/wildlife-photo-tour.jpg"
+              className="h-[320px] md:h-[500px] w-full object-cover object-center"
             />
 
-            <div className="p-8">
+            <div className="p-8 md:p-12">
               <p className="uppercase tracking-[0.3em] text-xs text-neutral-500 mb-4">
                 Carpathian Wilderness
               </p>
 
-              <h2 className="text-4xl font-black mb-6">
+              <h2 className="text-4xl md:text-5xl font-black mb-6">
                 Wildlife Photo Tour
               </h2>
 
-              <p className="text-neutral-400 leading-relaxed mb-8">
-                Multi-day wildlife photography experience focused on tracking, outdoor storytelling and authentic encounters in Romania’s remote forests.
+              <p className="text-neutral-400 leading-relaxed mb-8 max-w-3xl">
+                Multi-day wildlife photography experience focused on tracking,
+                outdoor storytelling and authentic encounters in Romania’s
+                remote forests.
               </p>
 
               <a
@@ -62,21 +64,22 @@ export default function ToursPage() {
           {/* TOUR 2 */}
           <div className="border border-white/10 overflow-hidden">
             <img
-              src="/images/mountains.jpg"
-              className="h-[500px] w-full object-cover"
+              src="/images/landscape-expedition.jpg"
+              className="h-[320px] md:h-[500px] w-full object-cover object-center"
             />
 
-            <div className="p-8">
+            <div className="p-8 md:p-12">
               <p className="uppercase tracking-[0.3em] text-xs text-neutral-500 mb-4">
                 Romanian Mountains
               </p>
 
-              <h2 className="text-4xl font-black mb-6">
+              <h2 className="text-4xl md:text-5xl font-black mb-6">
                 Landscape Expedition
               </h2>
 
-              <p className="text-neutral-400 leading-relaxed mb-8">
-                Cinematic landscape photography expedition through alpine terrain, remote ridges and wild camping locations.
+              <p className="text-neutral-400 leading-relaxed mb-8 max-w-3xl">
+                Cinematic landscape photography expedition through alpine
+                terrain, remote ridges and wild camping locations.
               </p>
 
               <a

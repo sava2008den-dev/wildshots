@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { photos } from "../data/photos";
 
 export default function PortfolioPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -12,19 +14,6 @@ export default function PortfolioPage() {
       className="bg-black text-white min-h-screen relative"
       onContextMenu={(e) => e.preventDefault()}
     >
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.onload = function() {
-              const el = document.getElementById('gallery');
-              if (el) {
-                el.scrollIntoView();
-              }
-            }
-          `,
-        }}
-      />
-
       <Navbar />
 
       {/* HERO */}
@@ -50,84 +39,38 @@ export default function PortfolioPage() {
       {/* FADE OVERLAY */}
       <div className="absolute top-[60vh] left-0 right-0 h-96 bg-gradient-to-b from-transparent to-black pointer-events-none z-0"></div>
 
-      {/* IMAGE 1 */}
+      {/* GALLERY */}
       <section
         id="gallery"
         className="relative z-10 py-8 md:py-16 px-6 md:px-8"
       >
-        <div className="max-w-4xl mx-auto">
-          <img
-            src="/images/bear-small.jpg"
-            draggable="false"
-            loading="lazy"
-            onClick={() => setSelectedImage("/images/bear.jpg")}
-            className="w-full h-[420px] md:h-[760px] object-cover cursor-pointer select-none"
-          />
+        <div className="max-w-4xl mx-auto space-y-16 md:space-y-24">
+          {photos.map((photo) => (
+            <div key={photo.slug}>
+              <Image
+                src={photo.preview}
+                draggable="false"
+                loading="lazy"
+                onClick={() => setSelectedImage(photo.image)}
+                className="w-full h-[260px] md:h-[520px] object-cover cursor-pointer select-none"
+                width={2200}
+height={1400}
+              />
 
-          <div className="mt-5 flex items-center justify-between">
-            <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600">
-              Carpathian Encounters
-            </p>
+              <div className="mt-5 flex items-center justify-between">
+                <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600">
+                  {photo.title}
+                </p>
 
-            <a
-              href="/store"
-              className="uppercase tracking-[0.35em] text-[10px] text-neutral-500 hover:text-white transition"
-            >
-              Available As Print
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* IMAGE 2 */}
-      <section className="relative z-10 py-8 md:py-16 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <img
-            src="/images/mountains-small.jpg"
-            draggable="false"
-            loading="lazy"
-            onClick={() => setSelectedImage("/images/mountains.jpg")}
-            className="w-full h-[420px] md:h-[760px] object-cover cursor-pointer select-none"
-          />
-
-          <div className="mt-5 flex items-center justify-between">
-            <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600">
-              Northern Ridges
-            </p>
-
-            <a
-              href="/store"
-              className="uppercase tracking-[0.35em] text-[10px] text-neutral-500 hover:text-white transition"
-            >
-              Available As Print
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* IMAGE 3 */}
-      <section className="relative z-10 py-8 md:py-16 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <img
-            src="/images/forest-small.jpg"
-            draggable="false"
-            loading="lazy"
-            onClick={() => setSelectedImage("/images/forest.jpg")}
-            className="w-full h-[420px] md:h-[760px] object-cover cursor-pointer select-none"
-          />
-
-          <div className="mt-5 flex items-center justify-between">
-            <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600">
-              Into The Forest
-            </p>
-
-            <a
-              href="/store"
-              className="uppercase tracking-[0.35em] text-[10px] text-neutral-500 hover:text-white transition"
-            >
-              Available As Print
-            </a>
-          </div>
+                <a
+                  href="/store"
+                  className="uppercase tracking-[0.35em] text-[10px] text-neutral-500 hover:text-white transition"
+                >
+                  Available As Print
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -144,10 +87,12 @@ export default function PortfolioPage() {
             CLOSE
           </button>
 
-          <img
+          <Image
             src={selectedImage}
             draggable="false"
             className="max-w-full max-h-full object-contain select-none"
+            width={2600}
+height={1800}
           />
         </div>
       )}

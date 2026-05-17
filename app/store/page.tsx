@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -41,10 +42,16 @@ export default function StorePage() {
               href="/prints/carpathian-encounters"
               className="block overflow-hidden rounded-[2rem]"
             >
-              <img
-                src="/images/bear.jpg"
-                className="h-[500px] w-full object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
-              />
+              <div className="relative h-[500px] w-full">
+                <Image
+                  src="/images/bear.jpg"
+                  alt="Carpathian Encounters"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+                  priority
+                />
+              </div>
             </a>
 
             <div className="mt-5 flex items-center justify-between">
@@ -70,10 +77,15 @@ export default function StorePage() {
               className="overflow-hidden rounded-[2rem] cursor-pointer"
               onClick={() => setSelectedImage("/images/mountains.jpg")}
             >
-              <img
-                src="/images/mountains.jpg"
-                className="h-[500px] w-full object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
-              />
+              <div className="relative h-[500px] w-full">
+                <Image
+                  src="/images/mountains.jpg"
+                  alt="Northern Peaks"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+                />
+              </div>
             </div>
 
             <div className="mt-5 flex items-center justify-between">
@@ -99,10 +111,15 @@ export default function StorePage() {
               className="overflow-hidden rounded-[2rem] cursor-pointer"
               onClick={() => setSelectedImage("/images/forest.jpg")}
             >
-              <img
-                src="/images/forest.jpg"
-                className="h-[500px] w-full object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
-              />
+              <div className="relative h-[500px] w-full">
+                <Image
+                  src="/images/forest.jpg"
+                  alt="Silent Forest"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+                />
+              </div>
             </div>
 
             <div className="mt-5 flex items-center justify-between">
@@ -121,6 +138,7 @@ export default function StorePage() {
               </p>
             </div>
           </div>
+
         </div>
       </section>
 

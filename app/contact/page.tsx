@@ -47,14 +47,14 @@ export default function ContactPage() {
             </p>
 
             <p>
-              The fastest way to get in touch is through WhatsApp or Instagram.
+              The fastest way to get in touch is through WhatsApp, email or Instagram.
             </p>
           </div>
 
           {/* CONTACT BUTTONS */}
           <div className="mt-16 flex flex-col md:flex-row gap-6 justify-center">
             <a
-              href="https://wa.me/+40740275555"
+              href="https://wa.me/+40700000000"
               target="_blank"
               className="border border-white/20 px-10 py-5 uppercase tracking-[0.3em] text-sm font-bold hover:bg-white hover:text-black transition"
             >
@@ -62,7 +62,14 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="tel:+40740275555"
+              href="mailto:hello@wildshots.ro"
+              className="border border-white/20 px-10 py-5 uppercase tracking-[0.3em] text-sm font-bold hover:bg-white hover:text-black transition"
+            >
+              Email
+            </a>
+
+            <a
+              href="tel:+40700000000"
               className="border border-white/20 px-10 py-5 uppercase tracking-[0.3em] text-sm font-bold hover:bg-white hover:text-black transition"
             >
               Call Now
@@ -79,9 +86,19 @@ export default function ContactPage() {
 
           {/* INFO */}
           <div className="mt-20 space-y-5 text-neutral-500">
-            <p>Phone: +40 740275555</p>
+            <p>
+              <a href="mailto:hello@wildshots.ro">
+                hello@wildshots.ro
+              </a>
+            </p>
 
-            <p>Instagram: @ssavaioan</p>
+            <p>
+              <a href="tel:+40740275555">
+                +40 740275555
+              </a>
+            </p>
+
+            <p>@ssavaioan</p>
 
             <p>Romania</p>
 

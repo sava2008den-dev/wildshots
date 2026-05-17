@@ -1,108 +1,167 @@
-export default function Store() {
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+export default function StorePage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    <section
-  id="store"
-  className="py-40 px-8 max-w-7xl mx-auto"
->
-      <div className="mb-20 max-w-4xl">
-        <p className="uppercase tracking-[0.4em] text-sm text-neutral-500 mb-6">
-          Fine Art Store
-        </p>
+    <main className="bg-black text-white min-h-screen">
+      <Navbar />
 
-        <h2 className="text-6xl md:text-8xl font-black leading-[0.95] mb-8">
-          Prints Made For The Wild.
-        </h2>
+      {/* HERO */}
+      <section
+        className="relative h-[70vh] bg-cover bg-center flex items-end"
+        style={{
+          backgroundImage: "url('/images/mountains.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10"></div>
 
-        <p className="text-xl text-neutral-400 leading-relaxed">
-          Museum-quality wildlife prints and licensed full-resolution imagery for collectors, brands and storytellers.
-        </p>
-      </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-8 pb-20 w-full">
+          <p className="uppercase tracking-[0.4em] text-xs text-neutral-500 mb-5">
+            WildShots Prints
+          </p>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {/* PRODUCT 1 */}
-        <div className="group">
-          <div className="overflow-hidden rounded-[2rem]">
-            <img
-              src="/images/bear.jpg"
-              className="h-[600px] w-full object-cover group-hover:scale-105 transition duration-700"
-            />
-          </div>
+          <h1 className="text-5xl md:text-8xl font-black leading-[0.9] max-w-5xl">
+            Fine Art Collection
+          </h1>
+        </div>
+      </section>
 
-          <div className="pt-6">
-            <div className="flex justify-between items-start gap-6">
+      {/* PRODUCTS */}
+      <section className="py-12 md:py-24 px-6 md:px-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8">
+
+          {/* PRODUCT 1 */}
+          <div className="group">
+            <a
+              href="/prints/carpathian-encounters"
+              className="block overflow-hidden rounded-[2rem]"
+            >
+              <div className="relative h-[500px] w-full">
+                <Image
+                  src="/images/bear.jpg"
+                  alt="Carpathian Encounters"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+                  priority
+                />
+              </div>
+            </a>
+
+            <div className="mt-5 flex items-center justify-between">
               <div>
-                <p className="uppercase tracking-[0.3em] text-xs text-neutral-500 mb-3">
+                <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
                   Fine Art Print
                 </p>
 
-                <h3 className="text-3xl font-black">
+                <h2 className="text-lg font-semibold">
                   Into The Mist
-                </h3>
+                </h2>
               </div>
 
-              <p className="text-neutral-300">
+              <p className="text-neutral-400 text-sm">
                 €120
               </p>
             </div>
           </div>
-        </div>
 
-        {/* PRODUCT 2 */}
-        <div className="group">
-          <div className="overflow-hidden rounded-[2rem]">
-            <img
-              src="/images/mountains.jpg"
-              className="h-[600px] w-full object-cover group-hover:scale-105 transition duration-700"
-            />
-          </div>
+          {/* PRODUCT 2 */}
+          <div className="group">
+            <div
+              className="overflow-hidden rounded-[2rem] cursor-pointer"
+              onClick={() => setSelectedImage("/images/mountains.jpg")}
+            >
+              <div className="relative h-[500px] w-full">
+                <Image
+                  src="/images/mountains.jpg"
+                  alt="Northern Peaks"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+                />
+              </div>
+            </div>
 
-          <div className="pt-6">
-            <div className="flex justify-between items-start gap-6">
+            <div className="mt-5 flex items-center justify-between">
               <div>
-                <p className="uppercase tracking-[0.3em] text-xs text-neutral-500 mb-3">
+                <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
                   Landscape Collection
                 </p>
 
-                <h3 className="text-3xl font-black">
+                <h2 className="text-lg font-semibold">
                   Northern Peaks
-                </h3>
+                </h2>
               </div>
 
-              <p className="text-neutral-300">
+              <p className="text-neutral-400 text-sm">
                 €95
               </p>
             </div>
           </div>
-        </div>
 
-        {/* PRODUCT 3 */}
-        <div className="group">
-          <div className="overflow-hidden rounded-[2rem]">
-            <img
-              src="/images/forest.jpg"
-              className="h-[600px] w-full object-cover group-hover:scale-105 transition duration-700"
-            />
-          </div>
+          {/* PRODUCT 3 */}
+          <div className="group">
+            <div
+              className="overflow-hidden rounded-[2rem] cursor-pointer"
+              onClick={() => setSelectedImage("/images/forest.jpg")}
+            >
+              <div className="relative h-[500px] w-full">
+                <Image
+                  src="/images/forest.jpg"
+                  alt="Silent Forest"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+                />
+              </div>
+            </div>
 
-          <div className="pt-6">
-            <div className="flex justify-between items-start gap-6">
+            <div className="mt-5 flex items-center justify-between">
               <div>
-                <p className="uppercase tracking-[0.3em] text-xs text-neutral-500 mb-3">
-                  Cinematic Wilderness
+                <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
+                  Wilderness Series
                 </p>
 
-                <h3 className="text-3xl font-black">
+                <h2 className="text-lg font-semibold">
                   Silent Forest
-                </h3>
+                </h2>
               </div>
 
-              <p className="text-neutral-300">
+              <p className="text-neutral-400 text-sm">
                 €140
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* POPUP */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center p-6"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-8 right-8 text-sm uppercase tracking-[0.3em]"
+            onClick={() => setSelectedImage(null)}
+          >
+            Close
+          </button>
+
+          <img
+            src={selectedImage}
+            className="max-w-full max-h-full rounded-[2rem] object-contain"
+          />
+        </div>
+      )}
+
+      <Footer />
+    </main>
   );
 }
