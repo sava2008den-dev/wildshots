@@ -20,7 +20,7 @@ export default function PortfolioPage() {
       <section
         className="relative h-[70vh] bg-cover bg-center flex items-end"
         style={{
-          backgroundImage: "url('/images/hero.jpg')",
+          backgroundImage: "url('/images/hero.webp')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20"></div>
@@ -49,12 +49,13 @@ export default function PortfolioPage() {
             <div key={photo.slug}>
               <Image
                 src={photo.preview}
+                alt={photo.title}
                 draggable="false"
                 loading="lazy"
                 onClick={() => setSelectedImage(photo.image)}
                 className="w-full h-[260px] md:h-[520px] object-cover cursor-pointer select-none"
                 width={2200}
-height={1400}
+                height={1400}
               />
 
               <div className="mt-5 flex items-center justify-between">
@@ -89,10 +90,11 @@ height={1400}
 
           <Image
             src={selectedImage}
+            alt="WildShots image"
             draggable="false"
             className="max-w-full max-h-full object-contain select-none"
             width={2600}
-height={1800}
+            height={1800}
           />
         </div>
       )}
