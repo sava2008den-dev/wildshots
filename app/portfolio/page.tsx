@@ -36,24 +36,18 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* FADE OVERLAY */}
-      <div className="absolute top-[60vh] left-0 right-0 h-96 bg-gradient-to-b from-transparent to-black pointer-events-none z-0"></div>
-
       {/* GALLERY */}
-      <section
-        id="gallery"
-        className="relative z-10 py-8 md:py-16 px-6 md:px-8"
-      >
+      <section className="relative z-10 py-8 md:py-16 px-6 md:px-8">
         <div className="max-w-4xl mx-auto space-y-16 md:space-y-24">
           {photos.map((photo) => (
             <div key={photo.slug}>
               <Image
                 src={photo.preview}
                 alt={photo.title}
-                draggable="false"
+                draggable={false}
                 loading="lazy"
                 onClick={() => setSelectedImage(photo.image)}
-                className="w-full h-[260px] md:h-[520px] object-cover cursor-pointer select-none"
+                className="w-full h-auto object-contain select-none"
                 width={2200}
                 height={1400}
               />
@@ -91,7 +85,7 @@ export default function PortfolioPage() {
           <Image
             src={selectedImage}
             alt="WildShots image"
-            draggable="false"
+            draggable={false}
             className="max-w-full max-h-full object-contain select-none"
             width={2600}
             height={1800}
