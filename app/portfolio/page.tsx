@@ -39,7 +39,7 @@ export default function PortfolioPage() {
       {/* GALLERY */}
       <section className="relative z-10 py-8 md:py-16 px-6 md:px-8">
         <div className="max-w-4xl mx-auto space-y-16 md:space-y-24">
-          {photos.map((photo) => (
+          {photos.map((photo: any) => (
             <div key={photo.slug}>
               <Image
                 src={photo.preview}

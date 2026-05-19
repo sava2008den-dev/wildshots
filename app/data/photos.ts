@@ -1,1 +1,1 @@
-export const photos: any[] = [
+export const photos = [;
