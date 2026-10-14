@@ -6,163 +6,165 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function StorePage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  return (
-    <main className="bg-black text-white min-h-screen">
-      <Navbar />
+return (
+<main className="bg-black text-white min-h-screen">
+<Navbar />
 
-      {/* HERO */}
-      <section
-        className="relative h-[70vh] bg-cover bg-center flex items-end"
-        style={{
-          backgroundImage: "url('/images/mountains.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10"></div>
+  {/* HERO */}
+  <section
+    className="relative h-[70vh] bg-cover bg-center flex items-end"
+    style={{
+      backgroundImage: "url('/images/mountains.jpg')",
+    }}
+  >
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 pb-20 w-full">
-          <p className="uppercase tracking-[0.4em] text-xs text-neutral-500 mb-5">
-            WildShots Prints
-          </p>
+    <div className="relative z-10 max-w-7xl mx-auto px-8 pb-20 w-full">
+      <p className="uppercase tracking-[0.4em] text-xs text-neutral-500 mb-5">
+        WildShots Prints
+      </p>
 
-          <h1 className="text-5xl md:text-8xl font-black leading-[0.9] max-w-5xl">
-            Fine Art Collection
-          </h1>
-        </div>
-      </section>
+      <h1 className="text-5xl md:text-8xl font-black leading-[0.9] max-w-5xl">
+        Fine Art Collection
+      </h1>
+    </div>
+  </section>
 
-      {/* PRODUCTS */}
-      <section className="py-12 md:py-24 px-6 md:px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
+  {/* PRODUCTS */}
+  <section className="py-12 md:py-24 px-6 md:px-8 max-w-7xl mx-auto">
+    <div className="grid md:grid-cols-3 gap-8">
 
-          {/* PRODUCT 1 */}
-          <div className="group">
-            <a
-              href="/prints/carpathian-encounters"
-              className="block overflow-hidden rounded-[2rem]"
-            >
-              <div className="relative h-[500px] w-full">
-                <Image
-                  src="/images/bear.jpg"
-                  alt="Carpathian Encounters"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
-                  priority
-                />
-              </div>
-            </a>
-
-            <div className="mt-5 flex items-center justify-between">
-              <div>
-                <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
-                  Fine Art Print
-                </p>
-
-                <h2 className="text-lg font-semibold">
-                  Into The Mist
-                </h2>
-              </div>
-
-              <p className="text-neutral-400 text-sm">
-                €120
-              </p>
-            </div>
-          </div>
-
-          {/* PRODUCT 2 */}
-          <div className="group">
-            <div
-              className="overflow-hidden rounded-[2rem] cursor-pointer"
-              onClick={() => setSelectedImage("/images/mountains.jpg")}
-            >
-              <div className="relative h-[500px] w-full">
-                <Image
-                  src="/images/mountains.jpg"
-                  alt="Northern Peaks"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
-                />
-              </div>
-            </div>
-
-            <div className="mt-5 flex items-center justify-between">
-              <div>
-                <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
-                  Landscape Collection
-                </p>
-
-                <h2 className="text-lg font-semibold">
-                  Northern Peaks
-                </h2>
-              </div>
-
-              <p className="text-neutral-400 text-sm">
-                €95
-              </p>
-            </div>
-          </div>
-
-          {/* PRODUCT 3 */}
-          <div className="group">
-            <div
-              className="overflow-hidden rounded-[2rem] cursor-pointer"
-              onClick={() => setSelectedImage("/images/forest.jpg")}
-            >
-              <div className="relative h-[500px] w-full">
-                <Image
-                  src="/images/forest.jpg"
-                  alt="Silent Forest"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
-                />
-              </div>
-            </div>
-
-            <div className="mt-5 flex items-center justify-between">
-              <div>
-                <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
-                  Wilderness Series
-                </p>
-
-                <h2 className="text-lg font-semibold">
-                  Silent Forest
-                </h2>
-              </div>
-
-              <p className="text-neutral-400 text-sm">
-                €140
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* POPUP */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center p-6"
-          onClick={() => setSelectedImage(null)}
+      {/* PRODUCT 1 — BORN FOR SPEED */}
+      <div className="group">
+        <a
+          href="/prints/carpathian-encounters"
+          className="block overflow-hidden rounded-[2rem]"
         >
-          <button
-            className="absolute top-8 right-8 text-sm uppercase tracking-[0.3em]"
-            onClick={() => setSelectedImage(null)}
-          >
-            Close
-          </button>
+          <div className="relative h-[500px] w-full">
+            <Image
+              src="/images/bear.jpg"
+              alt="Born for Speed"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+              priority
+            />
+          </div>
+        </a>
 
-          <img
-            src={selectedImage}
-            className="max-w-full max-h-full rounded-[2rem] object-contain"
-          />
+        <div className="mt-5 flex items-center justify-between">
+          <div>
+            <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
+              Fine Art Print
+            </p>
+
+            <h2 className="text-lg font-semibold">
+              Born for Speed
+            </h2>
+          </div>
+
+          <p className="text-neutral-400 text-sm">
+            €120
+          </p>
         </div>
-      )}
+      </div>
 
-      <Footer />
-    </main>
-  );
+      {/* PRODUCT 2 — QUIET POWER */}
+      <div className="group">
+        <a
+          href="/prints/quiet-power"
+          className="block overflow-hidden rounded-[2rem]"
+        >
+          <div className="relative h-[500px] w-full">
+            <Image
+              src="/images/mountains.jpg"
+              alt="Quiet Power — bison"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+            />
+          </div>
+        </a>
+
+        <div className="mt-5 flex items-center justify-between">
+          <div>
+            <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
+              Fine Art Print
+            </p>
+
+            <h2 className="text-lg font-semibold">
+              Quiet Power
+            </h2>
+          </div>
+
+          <p className="text-neutral-400 text-sm">
+            €95
+          </p>
+        </div>
+      </div>
+
+      {/* PRODUCT 3 — A LONE SHADOW */}
+      <div className="group">
+        <a
+          href="/prints/a-lone-shadow"
+          className="block overflow-hidden rounded-[2rem]"
+        >
+          <div className="relative h-[500px] w-full">
+            <Image
+              src="/images/forest.jpg"
+              alt="A Lone Shadow — wolf"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover group-hover:scale-[1.02] transition duration-[1600ms]"
+            />
+          </div>
+        </a>
+
+        <div className="mt-5 flex items-center justify-between">
+          <div>
+            <p className="uppercase tracking-[0.35em] text-[10px] text-neutral-600 mb-2">
+              Fine Art Print
+            </p>
+
+            <h2 className="text-lg font-semibold">
+              A Lone Shadow
+            </h2>
+          </div>
+
+          <p className="text-neutral-400 text-sm">
+            €95
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {/* POPUP */}
+  {selectedImage && (
+    <div
+      className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center p-6"
+      onClick={() => setSelectedImage(null)}
+    >
+      <button
+        className="absolute top-8 right-8 text-sm uppercase tracking-[0.3em]"
+        onClick={() => setSelectedImage(null)}
+      >
+        Close
+      </button>
+
+      <img
+        src={selectedImage}
+        alt="Enlarged print"
+        className="max-w-full max-h-full rounded-[2rem] object-contain"
+      />
+    </div>
+  )}
+
+  <Footer />
+</main>
+
+);
 }
